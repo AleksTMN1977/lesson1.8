@@ -22,6 +22,14 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
+    public static void delivTime (int deliveryDistance){
+
+        if (deliveryDistance <= 20) {
+            System.out.println("Срок доставки карты составит 1 день");
+        } else {
+            System.out.println("Срок доставки карты составит " + (deliveryDistance / 40 + 1) + " дн.");
+        }
+    }
 
     public static void main(String[] args) {
         int year = 2022;
@@ -30,5 +38,7 @@ public class Main {
         int clientOs = 0;
         int currentYear = LocalDate.now().getYear();
         versionOs(currentYear, clientOs,yearOS);
+        int deliveryDistance = 195;
+        delivTime(deliveryDistance);
     }
 }
