@@ -30,5 +30,4 @@ public class Main {
         int clientOs = 1;
         versionOs(currentYear, clientOs);
     }
-
 }
