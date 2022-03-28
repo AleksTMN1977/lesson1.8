@@ -36,7 +36,13 @@ public class Main {
     public static void doubleLetter(String let) {
         char[] letters = let.toCharArray();
         char prevChar = Character.MAX_VALUE;
-        System.out.println(prevChar);
+        StringBuilder result = new StringBuilder();
+        for (int c = 0; c < letters.length; c++) {
+            if (c == prevChar) {
+                result.append(c);
+
+            }
+        }
     }
 
     public static void main(String[] args) {
