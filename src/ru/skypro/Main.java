@@ -39,36 +39,15 @@ public class Main {
     public static void doubleLetter(String let) {
 
         char[] letters = let.toCharArray();
-        char prevChar = Character.MAX_VALUE;
-        StringBuilder result = new StringBuilder();
-        for (char c : letters) {
-            if (c == prevChar) {
-                System.out.println("Дубликат найден: " + result);
-                return;
+        for (int i = 0; i < letters.length - 1; i++) {
+            for (int j = i + 1; j < letters.length; j++) {
+                if (letters[i] == letters[j]) {
+                    System.out.println("Найден дубликат: " + letters[j]);
+                    return;
+                }
             }
-            result.append(c);
-            prevChar = (char) c;
         }
         System.out.println("Дубликатов не найдено");
-    }
-
-    public static void main(String[] args) {
-
-        int year = 2022;
-        checkYear(year);
-        int yearOS = 2021;
-        int clientOs = 0;
-        int currentYear = LocalDate.now().getYear();
-        versionOs(currentYear, clientOs, yearOS);
-        int deliveryDistance = 195;
-        delivTime(deliveryDistance);
-        String let = "aabccddefgghiijjkk";
-        doubleLetter("aabccddefgghiijjkk");
-        int arr[] = new int[]{3, 2, 1, 6, 5};
-        System.out.println(Arrays.toString(arr));
-        reversArr(arr);
-        System.out.println(Arrays.toString(arr));
-
     }
 
     public static void reversArr(int arr[]) {
@@ -81,5 +60,25 @@ public class Main {
             arr[tail--] = tmp;
         }
     }
+
+    public static void main(String[] args) {
+
+        int year = 1968;
+        checkYear(year);
+        int yearOS = 2022;
+        int clientOs = 0;
+        int currentYear = LocalDate.now().getYear();
+        versionOs(currentYear, clientOs, yearOS);
+        int deliveryDistance = 2355;
+        delivTime(deliveryDistance);
+        String let = "aabccddefgghiijjkk";
+        doubleLetter("aabccddefgghiijjkk");
+        int arr[] = new int[]{3, 2, 1, 6, 5};
+        System.out.println(Arrays.toString(arr));
+        reversArr(arr);
+        System.out.println(Arrays.toString(arr));
+
+    }
+
 }
 
